@@ -9,15 +9,15 @@ import (
 )
 
 func main() {
-	// register giveCitation Handler for "/citation" endpoint
-	http.HandleFunc("/citation", randomCitation)
+	// register giveQuote Handler for "/quote" endpoint
+	http.HandleFunc("/quote", randomQuote)
 
 	// start server on port 8080
 	http.ListenAndServe(":8080", nil)
 }
 
-// randomCitation parses the quotes.json and returns a random quote
-func randomCitation(w http.ResponseWriter, r *http.Request) {
+// randomQuote parses the quotes.json and returns a random quote
+func randomQuote(w http.ResponseWriter, r *http.Request) {
 	// instantiate QuotesJson struct
 	quotes := make([]QuoteJson, 0)
 	data := QuotesJson{quotes}
