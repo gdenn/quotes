@@ -15,4 +15,4 @@ RUN adduser --disabled-password myuser
 USER myuser
 
 # Set executable
-ENTRYPOINT ./main
+CMD ./main
