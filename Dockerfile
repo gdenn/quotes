@@ -10,8 +10,9 @@ ADD . .
 # Compule go service
 RUN go build -o main
 
+RUN adduser --disabled-password myuser
+
+USER myuser
+
 # Set executable
 ENTRYPOINT ./main
-
-# Expose 8080 port
-EXPOSE 8080

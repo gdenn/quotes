@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -13,7 +14,8 @@ func main() {
 	http.HandleFunc("/quote", randomQuote)
 
 	// start server on port 8080
-	http.ListenAndServe(":8080", nil)
+	port := ":" + os.Getenv("PORT")
+	http.ListenAndServe(port, nil)
 }
 
 // randomQuote parses the quotes.json and returns a random quote
